@@ -19,7 +19,7 @@ RUN echo "deb http://deb.debian.org/debian bookworm-backports main" > /etc/apt/s
 RUN apt update && apt install -y python3-pycparser meson/bookworm-backports
 
 RUN cd /tmp \
-&& git clone --depth 1 https://gitlab.freedesktop.org/mesa/mesa.git -b mesa-26.0.0 \
+&& git clone --depth 1 https://gitlab.freedesktop.org/mesa/mesa.git -b mesa-26.1.1 \
 && cd mesa \
 && meson setup build -Dgallium-drivers=ethosu,etnaviv,rocket -Dvulkan-drivers= -Dteflon=true \
 && meson compile -C build \
